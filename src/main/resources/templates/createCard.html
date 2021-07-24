@@ -18,7 +18,7 @@
         <div class="input_box">
             이름 :
             <input type="text" th:field="*{userName}">
-            <p th:text="${message}" style="color: red"></p>
+            <p th:text="*{errorMessage}" style="color: red"></p>
         </div>
         <div class="input_box">
             전화번호 :

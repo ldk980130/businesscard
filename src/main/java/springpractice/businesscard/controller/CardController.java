@@ -20,17 +20,17 @@ public class CardController {
     private final BusinessCardService businessCardService;
 
     @GetMapping("/new")
-    public String inputCard(Model model) {
+    public String createCardForm(Model model) {
         model.addAttribute("form", new CardForm());
         return "createCard";
     }
 
     @PostMapping("/new")
-    public String input(CardForm form, Model model) {
+    public String inputCard(CardForm form, Model model) {
 
         if (form.getUserName().isEmpty()) {
+            form.setErrorMessage("이름은 필수 입력 사항입니다.");
             model.addAttribute("form", form);
-            model.addAttribute("message", "이름은 필수 입력 사항입니다.");
             return "createCard";
         }
 
@@ -48,7 +48,7 @@ public class CardController {
     }
 
     @PostMapping("/search")
-    public String find(SearchForm form, Model model) {
+    public String showFindCard(SearchForm form, Model model) {
         String target = form.getUserName();
         Optional<BusinessCard> findCard = businessCardService.search(target);
 

@@ -11,4 +11,6 @@ public class CardForm {
 
     private String number;
     private String corporationName;
+
+    private String errorMessage;
 }
