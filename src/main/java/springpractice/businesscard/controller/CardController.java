@@ -74,6 +74,6 @@ public class CardController {
     public String delete(@PathVariable String name) {
         Optional<BusinessCard> businessCard = businessCardService.search(name);
         businessCardService.delete(businessCard.get());
-        return "redirect:/";
+        return "redirect:/list";
     }
 }
