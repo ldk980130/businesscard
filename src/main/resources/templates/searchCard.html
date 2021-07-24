@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>명함 검색</title>
+</head>
+<body>
+<form th:object="${form}" method="post">
+    검색할 이름을 입력하세요 :
+    <input type="text" th:field="*{userName}">
+    <p th:text="${form.errorMessage}" style="color: red;"></p>
+    <button type="submit">검색</button>
+    <a href="/" style="text-decoration: none" role="button">메인으로</a>
+</form>
+</body>
+</html>

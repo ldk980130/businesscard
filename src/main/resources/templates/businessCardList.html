@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>명함 목록</title>
+</head>
+<body>
+<table border="1">
+  <thead>
+  <tr>
+    <th>Name</th><th>Number</th><th>Corporate Name</th><th>Create Date</th><th></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="card : ${cards}">
+    <td th:text="${card.userName}"></td>
+    <td th:text="${card.phoneNumber}"></td>
+    <td th:text="${card.corporationName}"></td>
+    <td th:text="${card.createDate}"></td>
+    <td><a href="#" style="text-decoration: none"
+           th:href="@{/delete/{name} (name=${card.userName})}">삭제하기</a></td>
+  </tr>
+  </tbody>
+</table>
+<a href="/" style="text-decoration: none">메인으로</a>
+</body>
+</html>

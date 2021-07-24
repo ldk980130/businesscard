@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style type="text/css">
+        h1{
+            border-bottom:1px solid black;
+            text-align: center;
+            position:relative; bottom: 10px;
+        }
+        .container{
+            width: 500px;
+            border:1px solid black;
+            margin:0 auto;
+            text-align: center;
+            position:relative;
+        }
+        .btn{
+            font-size: 2em;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <h1>명함 관리 프로그램</h1>
+    <p><a class="btn" href="/new">명함 입력</a></p>
+    <p><a class="btn" href="/search">명함 검색</a></p>
+    <p><a class="btn" href="/list">명함 목록</a></p>
+</div>
+
+</body>
+</html>

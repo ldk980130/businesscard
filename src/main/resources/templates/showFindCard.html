@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>결과 명함</title>
+    <style type="text/css">
+        a{text-decoration: none}
+    </style>
+</head>
+<body>
+<span>Name: </span><span th:text="${findCard.userName}"></span><br>
+<span>Number: </span><span th:text="${findCard.phoneNumber}"></span><br>
+<span>Corporate Name: </span><span th:text="${findCard.corporationName}"></span><br>
+<span>Create Date: </span><span th:text="${findCard.createDate}"></span><br>
+<a href="/">메인으로</a>
+<a href="#" th:href="@{/delete/{name} (name=${findCard.userName})}">삭제하기</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>명함 입력</title>
+    <style type="text/css">
+        .container{border: 1px solid black; width: 800px; margin: 0 auto;}
+        .input_box{margin-bottom: 10px;}
+        button{margin: 0 auto}
+    </style>
+</head>
+<body>
+
+<form th:object="${form}" method="post">
+
+    <div class="container">
+        <h1>명함 입력</h1>
+        <div class="input_box">
+            이름 :
+            <input type="text" th:field="*{userName}">
+            <p th:text="${message}" style="color: red"></p>
+        </div>
+        <div class="input_box">
+            전화번호 :
+            <input type="tel" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}"
+                          th:field="*{number}">
+        </div>
+        <div class="input_box">
+            회사명 :
+            <input type="text" th:field="*{corporationName}">
+        </div>
+        <button type="submit">제출</button>
+        <a href="/" style="text-decoration: none">메인으로</a>
+    </div>
+</form>
+
+</body>
+</html>
